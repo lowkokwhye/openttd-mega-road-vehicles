@@ -1,0 +1,37 @@
+// Mega Road Vehicles v0.1.0 - first model: MegaBus
+grf { grfid: "MRV1"; name: string(STR_GRF_NAME); desc: string(STR_GRF_DESC); version: 1; min_compatible_version: 1; }
+cargotable { PASS }
+
+spriteset(sprites_megabus, "graphics/megabus_opengfx.png") {
+    [0, 0, 8, 18, -3, -10]
+    [32, 0, 20, 16, -14, -7]
+    [64, 0, 28, 12, -14, -6]
+    [96, 0, 20, 16, -6, -7]
+    [128, 0, 8, 18, -3, -10]
+    [160, 0, 20, 16, -14, -7]
+    [192, 0, 28, 12, -14, -6]
+    [224, 0, 20, 16, -6, -7]
+}
+spritegroup megabus_graphics { loaded: sprites_megabus; loading: sprites_megabus; }
+
+item(FEAT_ROADVEHS, megabus, 0) {
+    property {
+        name: string(STR_MEGABUS);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2020, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 255;
+        reliability_decay: 0;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        power: 2585 hp;
+        speed: 512 km/h;
+        weight: 35 ton;
+        cost_factor: 0;
+        running_cost_base: RUNNING_COST_NONE;
+        running_cost_factor: 0;
+        cargo_capacity: 255;
+        default_cargo_type: PASS;
+        loading_speed: 255;
+    }
+    graphics { cargo_capacity: return 5000; default: megabus_graphics; }
+}
