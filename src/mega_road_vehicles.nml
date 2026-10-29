@@ -24,7 +24,7 @@ item(FEAT_ROADVEHS, megabus, 0) {
         reliability_decay: 0;
         sprite_id: SPRITE_ID_NEW_ROADVEH;
         power: 2585 hp;
-        speed: 512 km/h;
+        speed: 510 km/h;
         weight: 35 ton;
         cost_factor: 0;
         running_cost_base: RUNNING_COST_NONE;
@@ -33,5 +33,5 @@ item(FEAT_ROADVEHS, megabus, 0) {
         default_cargo_type: PASS;
         loading_speed: 255;
     }
-    graphics { cargo_capacity: return 5000; default: megabus_graphics; }
+    graphics { cargo_capacity: return 5000; speed: return 512 km/h; default: megabus_graphics; }
 }
