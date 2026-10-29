@@ -33,5 +33,5 @@ item(FEAT_ROADVEHS, megabus, 0) {
         default_cargo_type: PASS;
         loading_speed: 255;
     }
-    graphics { cargo_capacity: return 5000; speed: return 512 km/h; default: megabus_graphics; }
+    graphics { cargo_capacity: return 5000; speed: return 256; default: megabus_graphics; }
 }
