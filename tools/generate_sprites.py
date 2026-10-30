@@ -27,3 +27,17 @@ out = Path("graphics")
 out.mkdir(exist_ok=True)
 sheet.save(out / "megabus_opengfx.png")
 print("Generated original OpenGFX bus sprite sheet")
+
+# OpenGFX second-generation armoured/valuables van (spr3180).
+# The last two directional sprites wrap to the next row of the atlas.
+valuables_views = [
+    (594,104,8,18), (610,104,20,16), (642,104,28,12),
+    (690,104,20,16), (722,104,8,18), (738,104,20,16),
+    (2,136,28,12), (50,136,20,16),
+]
+valuables_sheet = Image.new("P", (256,20), 0)
+valuables_sheet.putpalette(original.getpalette())
+for i, (x,y,w,h) in enumerate(valuables_views):
+    valuables_sheet.paste(original.crop((x,y,x+w,y+h)),(i*32,0))
+valuables_sheet.save(out/"megavaluables_opengfx.png")
+print("Generated original OpenGFX armoured valuables van sprites")
