@@ -41,3 +41,12 @@ for i, (x,y,w,h) in enumerate(valuables_views):
     valuables_sheet.paste(original.crop((x,y,x+w,y+h)),(i*32,0))
 valuables_sheet.save(out/"megavaluables_opengfx.png")
 print("Generated original OpenGFX armoured valuables van sprites")
+
+# Original OpenGFX second-generation goods truck (spr3132).
+goods_views = [(594,40,8,18),(610,40,20,16),(642,40,28,12),(690,40,20,16),(722,40,8,18),(738,40,20,16),(2,72,28,12),(50,72,20,16)]
+goods_sheet = Image.new("P", (256,20), 0)
+goods_sheet.putpalette(original.getpalette())
+for i,(x,y,w,h) in enumerate(goods_views):
+    goods_sheet.paste(original.crop((x,y,x+w,y+h)),(i*32,0))
+goods_sheet.save(out/"megagoods_opengfx.png")
+print("Generated original OpenGFX goods truck sprites")
